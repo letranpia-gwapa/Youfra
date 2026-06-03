@@ -1,13 +1,14 @@
 html, body{
     margin: 0;
     padding: 0;
-    min-height: 100vh; 
-    background-image: url("../Youfra/Untitled\ design\ \(3\).png"); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    min-height: 100vh;
+    background-image: url("../Youfra/Untitled design (3).png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     animation: fadeIn 0.5s ease-in;
+    font-family: sans-serif;
 }
 
 /* NAVBAR */
@@ -15,32 +16,37 @@ html, body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 100px;
+    padding: 15px 60px;
+    flex-wrap: wrap;
 }
 
 .menu ul{
     display: flex;
-    gap: 30px;
+    gap: 20px;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .menu ul li a{
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
-ul li a:hover{ 
-    color: rgb(241, 235, 235); 
+
+ul li a:hover{
+    color: rgb(241, 235, 235);
 }
 
 /* HERO LAYOUT */
 .hero{
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 60px;
+    padding: 0 40px;
+    gap: 20px;
 }
 
 /* CENTER TEXT */
@@ -50,7 +56,7 @@ ul li a:hover{
 }
 
 .center h1{
-    font-size: 50px;
+    font-size: 42px;
     margin-bottom: 10px;
 }
 
@@ -58,49 +64,84 @@ ul li a:hover{
 .side{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 /* IMAGES */
 .img{
-    width: 170px;
-    height: 165px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 10px;
     border: 4px solid white;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
 }
 
-.img :hover{
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px #8d090f;
-}
+/* FIX HOVER (remove broken selector) */
 .img:hover{
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.05);
     box-shadow: 0 0 20px #ffffff;
 }
-/* LEFT ROTATION */
+
+/* ROTATION */
 .left .img1{ transform: rotate(-15deg); }
 .left .img2{ transform: rotate(10deg); }
 .left .img3{ transform: rotate(-5deg); }
 
-/* RIGHT ROTATION */
 .right .img4{ transform: rotate(15deg); }
 .right .img5{ transform: rotate(-10deg); }
 .right .img6{ transform: rotate(5deg); }
 
-/* RESPONSIVE */
+/* RESPONSIVE TABLET */
 @media (max-width: 768px){
     .hero{
         flex-direction: column;
-        height: auto;
-        gap: 30px;
         text-align: center;
+        padding: 20px;
+        gap: 25px;
     }
 
     .side{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .img{
+        width: 120px;
+        height: 120px;
+    }
+
+    .center h1{
+        font-size: 32px;
+    }
+}
+
+/* RESPONSIVE PHONE (IMPORTANT FIX) */
+@media (max-width: 480px){
+    .navbar{
+        padding: 10px 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu ul{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero{
+        padding: 15px;
+    }
+
+    .img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .center h1{
+        font-size: 26px;
     }
 }
